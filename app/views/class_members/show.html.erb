@@ -1,0 +1,73 @@
+<p>
+  <b>First name:</b>
+  <%=h @class_member.first_name %>
+</p>
+
+<p>
+  <b>Last name:</b>
+  <%=h @class_member.last_name %>
+</p>
+
+<p>
+  <b>Suffix:</b>
+  <%=h @class_member.suffix %>
+</p>
+
+<p>
+  <b>Class name:</b>
+  <%=h @class_member.class_name %>
+</p>
+
+<p>
+  <b>Address1:</b>
+  <%=h @class_member.address1 %>
+</p>
+
+<p>
+  <b>Address2:</b>
+  <%=h @class_member.address2 %>
+</p>
+
+<p>
+  <b>City:</b>
+  <%=h @class_member.city %>
+</p>
+
+<p>
+  <b>State:</b>
+  <%=h @class_member.state %>
+</p>
+
+<p>
+  <b>Postal code:</b>
+  <%=h @class_member.postal_code %>
+</p>
+
+<p>
+  <b>Country:</b>
+  <%=h @class_member.country %>
+</p>
+
+<p>
+  <b>Email address:</b>
+  <%=h @class_member.email_address %>
+</p>
+
+<p>
+  <b>Verified:</b>
+  <%=h @class_member.verified %>
+</p>
+
+<p>
+  <b>Mailing:</b>
+  <%=h @class_member.mailing %>
+</p>
+
+<p>
+  <b>Comments:</b>
+  <%=h @class_member.comments %>
+</p>
+
+
+<%= link_to 'Edit', edit_class_member_path(@class_member) %> |
+<%= link_to 'Back', class_members_path %>

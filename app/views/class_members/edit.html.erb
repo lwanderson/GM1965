@@ -1,0 +1,68 @@
+<h1>Editing class_member</h1>
+
+<% form_for(@class_member) do |f| %>
+  <%= f.error_messages %>
+
+  <p>
+    <%= f.label :first_name %><br />
+    <%= f.text_field :first_name %>
+  </p>
+  <p>
+    <%= f.label :last_name %><br />
+    <%= f.text_field :last_name %>
+  </p>
+  <p>
+    <%= f.label :suffix %><br />
+    <%= f.text_field :suffix %>
+  </p>
+  <p>
+    <%= f.label :class_name %><br />
+    <%= f.text_field :class_name %>
+  </p>
+  <p>
+    <%= f.label :address1 %><br />
+    <%= f.text_field :address1 %>
+  </p>
+  <p>
+    <%= f.label :address2 %><br />
+    <%= f.text_field :address2 %>
+  </p>
+  <p>
+    <%= f.label :city %><br />
+    <%= f.text_field :city %>
+  </p>
+  <p>
+    <%= f.label :state %><br />
+    <%= f.text_field :state %>
+  </p>
+  <p>
+    <%= f.label :postal_code %><br />
+    <%= f.text_field :postal_code %>
+  </p>
+  <p>
+    <%= f.label :country %><br />
+    <%= f.text_field :country %>
+  </p>
+  <p>
+    <%= f.label :email_address %><br />
+    <%= f.text_field :email_address %>
+  </p>
+  <p>
+    <%= f.label :verified %><br />
+    <%= f.check_box :verified %>
+  </p>
+  <p>
+    <%= f.label :mailing %><br />
+    <%= f.text_field :mailing %>
+  </p>
+  <p>
+    <%= f.label :comments %><br />
+    <%= f.text_area :comments %>
+  </p>
+  <p>
+    <%= f.submit 'Update' %>
+  </p>
+<% end %>
+
+<%= link_to 'Show', @class_member %> |
+<%= link_to 'Back', class_members_path %>

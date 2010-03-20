@@ -1,0 +1,46 @@
+<h1>Listing class_members</h1>
+
+<table>
+  <tr>
+    <th>First name</th>
+    <th>Last name</th>
+    <th>Suffix</th>
+    <th>Class name</th>
+    <th>Address1</th>
+    <th>Address2</th>
+    <th>City</th>
+    <th>State</th>
+    <th>Postal code</th>
+    <th>Country</th>
+    <th>Email address</th>
+    <th>Verified</th>
+    <th>Mailing</th>
+    <th>Comments</th>
+  </tr>
+
+<% @class_members.each do |class_member| %>
+  <tr>
+    <td><%=h class_member.first_name %></td>
+    <td><%=h class_member.last_name %></td>
+    <td><%=h class_member.suffix %></td>
+    <td><%=h class_member.class_name %></td>
+    <td><%=h class_member.address1 %></td>
+    <td><%=h class_member.address2 %></td>
+    <td><%=h class_member.city %></td>
+    <td><%=h class_member.state %></td>
+    <td><%=h class_member.postal_code %></td>
+    <td><%=h class_member.country %></td>
+    <td><%=h class_member.email_address %></td>
+    <td><%=h class_member.verified %></td>
+    <td><%=h class_member.mailing %></td>
+    <td><%=h class_member.comments %></td>
+    <td><%= link_to 'Show', class_member %></td>
+    <td><%= link_to 'Edit', edit_class_member_path(class_member) %></td>
+    <td><%= link_to 'Destroy', class_member, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New class_member', new_class_member_path %>
