@@ -13,7 +13,7 @@ class CreateClassMembers < ActiveRecord::Migration
       t.string :country
       t.string :email_address
       t.boolean :verified
-      t.number :mailing
+      t.string :mailing
       t.text :comments
 
       t.timestamps

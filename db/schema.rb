@@ -24,6 +24,7 @@ ActiveRecord::Schema.define(:version => 20100320135122) do
     t.string   "country"
     t.string   "email_address"
     t.boolean  "verified"
+    t.string   "mailing"
     t.text     "comments"
     t.datetime "created_at"
     t.datetime "updated_at"
