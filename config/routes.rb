@@ -1,5 +1,5 @@
 ActionController::Routing::Routes.draw do |map|
-  map.resources :class_members
+  map.resources :registrations
 
   map.resources :class_members
 
@@ -21,7 +21,7 @@ ActionController::Routing::Routes.draw do |map|
 
   # Sample resource route with sub-resources:
   #   map.resources :products, :has_many => [ :comments, :sales ], :has_one => :seller
-  
+
   # Sample resource route with more complex sub-resources
   #   map.resources :products do |products|
   #     products.resources :comments
@@ -39,7 +39,13 @@ ActionController::Routing::Routes.draw do |map|
 
   # See how all your routes lay out with "rake routes"
 
-  map.root :controller => "home"
+  map.connect 'gm65index', :controller => 'gm65', :action => 'gm65index'
+  map.connect 'register', :controller => 'gm65', :action => 'register'
+  map.connect 'members', :controller => 'gm65', :action => 'members'
+  map.connect 'reunions', :controller => 'gm65', :action => 'reunions'
+  map.connect 'signin', :controller => 'gm65', :action => 'signin'
+  map.connect 'memoriam', :controller => 'gm65', :action => 'memoriam'
+  map.root :controller => "gm65"
 
   # Install the default routes as the lowest priority.
   # Note: These default routes make all actions in every controller accessible via GET requests. You should

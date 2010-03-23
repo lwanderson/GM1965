@@ -1,0 +1,91 @@
+<h1>New registration</h1>
+
+<% form_for(@registration) do |f| %>
+  <%= f.error_messages %>
+
+  <p>
+    <%= f.label :first_name %><br />
+    <%= f.text_field :first_name %>
+  </p>
+  <p>
+    <%= f.label :mi %><br />
+    <%= f.text_field :mi %>
+  </p>
+  <p>
+    <%= f.label :last_name %><br />
+    <%= f.text_field :last_name %>
+  </p>
+  <p>
+    <%= f.label :suffix %><br />
+    <%= f.text_field :suffix %>
+  </p>
+  <p>
+    <%= f.label :class_name %><br />
+    <%= f.text_field :class_name %>
+  </p>
+  <p>
+    <%= f.label :address_1 %><br />
+    <%= f.text_field :address_1 %>
+  </p>
+  <p>
+    <%= f.label :address_2 %><br />
+    <%= f.text_field :address_2 %>
+  </p>
+  <p>
+    <%= f.label :city %><br />
+    <%= f.text_field :city %>
+  </p>
+  <p>
+    <%= f.label :state %><br />
+    <%= f.text_field :state %>
+  </p>
+  <p>
+    <%= f.label :zip %><br />
+    <%= f.text_field :zip %>
+  </p>
+  <p>
+    <%= f.label :province %><br />
+    <%= f.text_field :province %>
+  </p>
+  <p>
+    <%= f.label :country %><br />
+    <%= f.text_field :country %>
+  </p>
+  <p>
+    <%= f.label :email %><br />
+    <%= f.text_field :email %>
+  </p>
+  <p>
+    <%= f.label :gm_street %><br />
+    <%= f.text_field :gm_street %>
+  </p>
+  <p>
+    <%= f.label :gm_colors %><br />
+    <%= f.text_field :gm_colors %>
+  </p>
+  <p>
+    <%= f.label :gm_PIAA %><br />
+    <%= f.text_field :gm_PIAA %>
+  </p>
+  <p>
+    <%= f.label :class_colors %><br />
+    <%= f.text_field :class_colors %>
+  </p>
+  <p>
+    <%= f.label :class_motto %><br />
+    <%= f.text_field :class_motto %>
+  </p>
+  <p>
+    <%= f.label :class_flower %><br />
+    <%= f.text_field :class_flower %>
+  </p>
+  <p>
+    <%= f.label :class_size %><br />
+    <%= f.text_field :class_size %>
+  </p>
+  <p>
+    <%= f.submit 'Create' %>
+  </p>
+<% end %>
+
+<%= link_to 'Back', registrations_path %>

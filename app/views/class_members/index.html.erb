@@ -1,42 +1,29 @@
 <h1>Listing class_members</h1>
 
-<table>
+<table border="1">
   <tr>
-    <th>First name</th>
-    <th>Last name</th>
-    <th>Suffix</th>
-    <th>Class name</th>
-    <th>Address1</th>
-    <th>Address2</th>
-    <th>City</th>
-    <th>State</th>
-    <th>Postal code</th>
-    <th>Country</th>
-    <th>Email address</th>
-    <th>Verified</th>
-    <th>Mailing</th>
-    <th>Comments</th>
+    <th>First Name<br>Spouse</th>
+    <th>Last Name<br>Email Address</th>
+    <th>Suffix<br>Verified</th>
+    <th>Class Name<br>Mailing</th>
+    <th>Address 1<br>Address 2<br>Comments</th>
+    <th>City, State  Postal code</th>
+    <th>Country<br>Last Contact<br>Last Attended</th>
   </tr>
 
 <% @class_members.each do |class_member| %>
   <tr>
-    <td><%=h class_member.first_name %></td>
-    <td><%=h class_member.last_name %></td>
-    <td><%=h class_member.suffix %></td>
-    <td><%=h class_member.class_name %></td>
-    <td><%=h class_member.address1 %></td>
-    <td><%=h class_member.address2 %></td>
-    <td><%=h class_member.city %></td>
-    <td><%=h class_member.state %></td>
-    <td><%=h class_member.postal_code %></td>
-    <td><%=h class_member.country %></td>
-    <td><%=h class_member.email_address %></td>
-    <td><%=h class_member.verified %></td>
-    <td><%=h class_member.mailing %></td>
-    <td><%=h class_member.comments %></td>
-    <td><%= link_to 'Show', class_member %></td>
-    <td><%= link_to 'Edit', edit_class_member_path(class_member) %></td>
-    <td><%= link_to 'Destroy', class_member, :confirm => 'Are you sure?', :method => :delete %></td>
+    <td><%=h class_member.first_name %><br><%=h class_member.spouse %></td>
+    <td><%=h class_member.last_name %><br><%=h class_member.email_address %></td>
+    <td><%=h class_member.suffix %><br><%=h class_member.verified %></td>
+    <td><%=h class_member.class_name %><br><%=h class_member.mailing %></td>
+    <td><%=h class_member.address1 %><br><%=h class_member.address2 %><br><%=h class_member.comments %></td>
+    <td><%=h class_member.city %>, <%=h class_member.state %>  <%=h class_member.postal_code %></td>
+    <td><%=h class_member.country %><br><%=h class_member.last_contact %><br><%=h class_member.last_attended %></td>
+    <td><%= link_to 'Show', class_member %>
+      <%= link_to 'Edit', edit_class_member_path(class_member) %>
+      <%= link_to 'Destroy', class_member, :confirm => 'Are you sure?', :method => :delete %>
+    </td>
   </tr>
 <% end %>
 </table>

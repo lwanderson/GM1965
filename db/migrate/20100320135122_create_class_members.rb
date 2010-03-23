@@ -11,9 +11,12 @@ class CreateClassMembers < ActiveRecord::Migration
       t.string :state
       t.string :postal_code
       t.string :country
-      t.string :email_address
       t.boolean :verified
+      t.string :email_address
+      t.string :spouse
       t.string :mailing
+      t.string :last_contact
+      t.string :last_attended
       t.text :comments
 
       t.timestamps

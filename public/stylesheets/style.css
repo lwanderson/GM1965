@@ -1,0 +1,202 @@
+<!--
+	body {
+	 	font-family : Verdana,Arial,Helvetica;
+      background-repeat:no-repeat;
+	}
+
+	a  {
+	 	font-family : Arial,Helvetica;
+	 	font-size : 18px;
+	 	text-decoration : underline;
+		color : #face4e;
+	 }
+
+	a:hover  {
+	 	color : white;
+	 }
+
+	.defaultlink  {
+	 	font-family : Arial,Helvetica;
+	 	font-size : 11px;
+	 	font-weight : bold;
+	 	color : white;
+	 	text-decoration : none;
+	 }
+
+	.defaultlink:hover  {
+	 	color : #806040;
+	 }
+
+	.headerbg {
+	    color: #C08040;
+	}
+
+	.buttonlight {
+	    background-color: #face4e;
+	}
+
+	.buttoncorner {
+	    background-color: #806040;
+	}
+
+	.buttondark {
+	    background-color: #806000;
+	}
+
+	.buttonbg {
+	    background-color: #C08040;
+	}
+
+	.buttontext {
+	 	font-family : Verdana,Arial,Helvetica;
+	 	font-size : 12px;
+		font-weight : bold;
+		text-decoration : none;
+	 	color : #face4e;
+	}
+
+	.buttontext:hover {
+	 	color : #FFFFCC;
+	}
+
+	.menutext {
+	 	font-family : Verdana,Arial,Helvetica;
+	 	font-size : 16px;
+		font-weight : bold;
+		text-decoration : none;
+	 	color : white;
+	}
+
+	.menutext:hover {
+	 	color : #face4e;
+	}
+
+	.menuselected {
+	 	font-family : Verdana,Arial,Helvetica;
+	 	font-size : 12px;
+		font-weight : bold;
+		text-decoration : none;
+	 	color : #face4e;
+	}
+
+	.menutitle {
+	 	font-family : Verdana,Arial,Helvetica;
+	 	font-size : 16px;
+		font-weight : bold;
+		text-decoration : none;
+	 	color : #face4e;
+	}
+
+	.menubg {
+	    color: #C08040;
+	    background-color: #000000;
+	}
+
+	.pagetitle {
+	 	font-family : Lucida Calligraphy,Verdana,Arial,Helvetica;
+	 	font-size : 46px;
+		font-weight : bold;
+		text-decoration : none;
+	 	color : #face4e;
+	}
+
+	.subtitle {
+	 	font-family : Verdana,Arial,Helvetica;
+	 	font-size : 32px;
+		font-weight : bold;
+		text-decoration : none;
+	 	color : #face4e;
+	}
+
+	.maintitle {
+	 	font-family : Verdana,Arial,Helvetica;
+	 	font-size : 20px;
+		font-weight : bold;
+		text-decoration : none;
+	 	color : #face4e;
+	}
+
+	.mainborder {
+	 	background-color : #face4e;
+	}
+
+	.mainbg {
+	 	background-color : #C08040;
+	}
+
+	.mainbold {
+	 	font-family : Arial,Helvetica;
+		font-weight : bold;
+	 	font-size : 18px;
+		text-decoration : none;
+	 	color : yellow;
+	}
+
+	.maintext {
+	 	font-family : Arial,Helvetica;
+	 	font-size : 18px;
+		text-decoration : none;
+	 	color : #face4e;
+	}
+
+	.mainlink {
+	 	font-family : Verdana,Arial,Helvetica;
+	 	font-size : 20px;
+		font-weight : bold;
+		text-decoration : underline;
+	 	color : #face4e;
+	}
+
+	.maintext:hover {
+		font-weight : bold;
+	}
+
+	.firstletter {
+	 	font-size : 120%;
+		font-weight : bold;
+	}
+
+	.logotext {
+	 	font-family : Stop,Arial,Helvetica;
+	 	font-size : 12px;
+		text-decoration : none;
+	 	color : #806000;
+	}
+
+	.marginnotesbox {
+	    background-color: #806000;
+	}
+
+	.marginnotestitle {
+	 	font-family : Verdana,Arial,Helvetica;
+	 	font-size : 12px;
+		font-weight : bold;
+		text-decoration : none;
+	    background-color: #face4e;
+	 	color : #C08040;
+	}
+
+	.marginnotesback {
+	    background-color: #000000;
+	}
+
+	.marginnotestext {
+	 	font-family : Verdana,Arial,Helvetica;
+	 	font-size : 10px;
+		text-decoration : none;
+	 	color : #C08040;
+	}
+
+	.footer {
+	 	font-family : Verdana,Arial,Helvetica;
+	 	font-size : 14px;
+		font-weight : bold;
+	 	color : white;
+	}
+
+	.footer:hover {
+		font-weight : bold;
+		color : #face4e;
+	}
+
+	-->
