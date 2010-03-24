@@ -41,10 +41,12 @@ ActionController::Routing::Routes.draw do |map|
 
   map.connect 'gm65index', :controller => 'gm65', :action => 'gm65index'
   map.connect 'register', :controller => 'gm65', :action => 'register'
+  map.connect 'member_randr', :controller => 'gm65', :action => 'member_randr'
   map.connect 'members', :controller => 'gm65', :action => 'members'
   map.connect 'reunions', :controller => 'gm65', :action => 'reunions'
   map.connect 'signin', :controller => 'gm65', :action => 'signin'
   map.connect 'memoriam', :controller => 'gm65', :action => 'memoriam'
+  map.connect 'thanks', :controller => 'gm65', :action => 'thanks'
   map.root :controller => "gm65"
 
   # Install the default routes as the lowest priority.

@@ -4,7 +4,7 @@
 function showRandRWindow() {
    setx = (screen.availWidth - 620)/2;
    sety = (screen.availHeight-720)/2;
-   window.open("member_randr.html", "newWin", "status=no,menubar=no,width=620,height=750,screenx="+setx+",screeny="+sety)
+   window.open("member_randr", "newWin", "status='no',menubar='no',width=620,height=750,screenx="+setx+",screeny="+sety)
 }
 
 function toggleSubmit(button) {
@@ -197,7 +197,7 @@ function validateForm(theform) {
 
 function checkString(thestring) {
 
-   //var checkit = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyzƒŠŒŽšœžŸÀÁÂÃÄÅÆÇÈÉÊËÌÍÎÏÐÑÒÓÔÕÖØÙÚÛÜÝÞßàáâãäåæçèéêëìíîïðñòóôõöøùúûüýþ0123456789-.@_ \t\r\n\f";
+   //var checkit = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyzƒŠŒŽšœžŸÀÁÂÃÄÅÆÇÈÉÊËÌÍÎÏÐÑÒÓÔÕÖØÙÚÛÜÝÞßàáâãäåæçèéêëìíîïðñòóôõöøùúûüýþ0123456789-.,@_ \t\r\n\f";
    var checkit = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyzƒŠŒŽšœžŸàáâãäåæçèéêëìíîï0123456789-.@_ \t\r\n\f";
    var checkStr = thestring;
    var returnVal = true;
@@ -240,11 +240,6 @@ function cancelForm() {
    if (confirm('Are you sure you want to leave this form?', 'Confirm cancel:')) {
       history.back();
       }
-	}
-
-function sayThanks() {
-   location.replace(document.URL.substring(0,(document.URL.lastIndexOf('/'))+1)+"thanks.php");
-	return true;
 	}
 
 // ]]>

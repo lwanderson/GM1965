@@ -21,5 +21,11 @@ class Gm65Controller < ApplicationController
   def memoriam
   end
 
+  def thanks
+  end
+
+  def member_randr
+  end
+
 end
 

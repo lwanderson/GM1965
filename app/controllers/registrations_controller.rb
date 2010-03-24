@@ -47,7 +47,7 @@ class RegistrationsController < ApplicationController
         flash[:notice] = 'Registration was successfully created.'
         format.html {
           if params[:source] == 'gmclassof65.org'
-            redirect_to('/thanks.html')
+            redirect_to("/thanks")
           else
             redirect_to(@registration)
           end
