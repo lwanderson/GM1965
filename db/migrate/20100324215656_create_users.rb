@@ -8,13 +8,14 @@ class CreateUsers < ActiveRecord::Migration
       t.datetime :last_password_change
       t.boolean  :force_password_change
       t.boolean  :enabled
+      t.boolean  :admin
       t.timestamps
     end
     add_index :users, [:username], :name => :users_username_idx
   end
 
   def self.down
-    drop_index :users_username_idx
+    remove_index :users, :name => :users_username_idx
     drop_table :users
   end
 

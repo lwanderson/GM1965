@@ -9,6 +9,7 @@ class User < ActiveRecord::Base
 
   validates_presence_of :username
   validates_length_of :username, :maximum => 255
+  validates_uniqueness_of :username, :on => :create
   validates_presence_of :password
   validates_length_of :password, :maximum => 255
 

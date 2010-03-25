@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20100322151636) do
+ActiveRecord::Schema.define(:version => 20100324215656) do
 
   create_table "class_members", :force => true do |t|
     t.string   "first_name"
@@ -54,8 +54,25 @@ ActiveRecord::Schema.define(:version => 20100322151636) do
     t.string   "class_motto"
     t.string   "class_flower"
     t.string   "class_size"
+    t.boolean  "processed"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
+
+  add_index "registrations", ["email"], :name => "registrations_email_idx"
+
+  create_table "users", :force => true do |t|
+    t.string   "username",              :null => false
+    t.string   "password",              :null => false
+    t.datetime "expires"
+    t.datetime "last_password_change"
+    t.boolean  "force_password_change"
+    t.boolean  "enabled"
+    t.boolean  "admin"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "users", ["username"], :name => "users_username_idx"
 
 end
