@@ -21,12 +21,14 @@ class CreateRegistrations < ActiveRecord::Migration
       t.string :class_motto
       t.string :class_flower
       t.string :class_size
-
+      t.boolean :processed
       t.timestamps
     end
+    add_index :registrations, [:email], :name => :registrations_email_idx
   end
 
   def self.down
+    remove_index :registrations, :name => :registrations_email_idx
     drop_table :registrations
   end
 end
