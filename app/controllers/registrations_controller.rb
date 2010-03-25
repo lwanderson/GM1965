@@ -41,20 +41,42 @@ class RegistrationsController < ApplicationController
   # POST /registrations.xml
   def create
     @registration = Registration.new(params[:registration])
-
+    source = params[:source] || ''
     respond_to do |format|
-      if @registration.save
-        flash[:notice] = 'Registration was successfully created.'
+      begin
+        if @registration.save
+          flash[:notice] = 'Registration was successfully created.'
+          format.html {
+            if (source) == 'gmclassof65.org'
+              #redirect_to("/thanks")
+              redirect_to :controller=>"/gm65", :action =>"thanks"
+            else
+              redirect_to(@registration)
+            end
+            }
+          format.xml  { render :xml => @registration, :status => :created, :location => @registration }
+        else
+          flash[:notice] = 'There was an error creating the registration.'
+          @err_msg = ''
+          format.html {
+            if (source) == 'gmclassof65.org'
+              redirect_to :controller=>"/gm65", :action =>"reg_error"
+            else
+              render :action => "new"
+            end
+            }
+          format.xml  { render :xml => @registration.errors, :status => :unprocessable_entity }
+        end
+      rescue Exception => e
+        flash[:notice] = 'There was an error creating the registration.'
+        @err_msg = e.message
         format.html {
-          if params[:source] == 'gmclassof65.org'
-            redirect_to("/thanks")
+          if (source) == 'gmclassof65.org'
+            redirect_to :controller=>"/gm65", :action =>"reg_error"
           else
-            redirect_to(@registration)
+            render :action => "new"
           end
           }
-        format.xml  { render :xml => @registration, :status => :created, :location => @registration }
-      else
-        format.html { render :action => "new" }
         format.xml  { render :xml => @registration.errors, :status => :unprocessable_entity }
       end
     end
