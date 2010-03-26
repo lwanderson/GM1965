@@ -41,6 +41,7 @@ ActionController::Routing::Routes.draw do |map|
 
   map.connect 'gm65index', :controller => 'gm65', :action => 'gm65index'
   map.connect 'register', :controller => 'gm65', :action => 'register'
+  map.connect 'reg_error', :controller => 'gm65', :action => 'reg_error'
   map.connect 'member_randr', :controller => 'gm65', :action => 'member_randr'
   map.connect 'members', :controller => 'gm65', :action => 'members'
   map.connect 'reunions', :controller => 'gm65', :action => 'reunions'

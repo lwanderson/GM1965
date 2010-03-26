@@ -48,8 +48,7 @@ class RegistrationsController < ApplicationController
           flash[:notice] = 'Registration was successfully created.'
           format.html {
             if (source) == 'gmclassof65.org'
-              #redirect_to("/thanks")
-              redirect_to :controller=>"/gm65", :action =>"thanks"
+              redirect_to :controller=>"/gm65", :action =>"thanks" and return
             else
               redirect_to(@registration)
             end
@@ -57,10 +56,10 @@ class RegistrationsController < ApplicationController
           format.xml  { render :xml => @registration, :status => :created, :location => @registration }
         else
           flash[:notice] = 'There was an error creating the registration.'
-          @err_msg = ''
           format.html {
             if (source) == 'gmclassof65.org'
-              redirect_to :controller=>"/gm65", :action =>"reg_error"
+              error_msgs = @registration.errors.full_messages
+              redirect_to :controller=>"/gm65", :action =>"reg_error", :params => { :errors=>error_msgs  } and return
             else
               render :action => "new"
             end
@@ -69,10 +68,9 @@ class RegistrationsController < ApplicationController
         end
       rescue Exception => e
         flash[:notice] = 'There was an error creating the registration.'
-        @err_msg = e.message
         format.html {
           if (source) == 'gmclassof65.org'
-            redirect_to :controller=>"/gm65", :action =>"reg_error"
+            redirect_to :controller=>"/gm65", :action =>"reg_error", :params => { :errors=>e.message }  and return
           else
             render :action => "new"
           end

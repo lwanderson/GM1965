@@ -7,6 +7,22 @@ class Gm65Controller < ApplicationController
   end
 
   def register
+    if @registration.nil?
+      @registration = Registration.new
+    end
+  end
+
+  def reg_error
+    error_msgs = []
+    errors = params[:errors]
+    if errors.is_a?(String)
+      error_msgs << errors
+    elsif errors.is_a?(Array)
+      error_msgs = errors
+    end
+    @error_messages = "<div class='errors'>"
+    @error_messages << error_msgs.join(".<br>")
+    @error_messages << "</div>"
   end
 
   def members

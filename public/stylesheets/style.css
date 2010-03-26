@@ -31,6 +31,13 @@
 	    color: #C08040;
 	}
 
+	.errors {
+	 	font-family : Verdana,Arial,Helvetica;
+	 	font-size : 18px;
+		text-decoration : none;
+      color: red;
+	}
+
 	.buttonlight {
 	    background-color: #face4e;
 	}
