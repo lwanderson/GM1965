@@ -48,6 +48,8 @@ class RegistrationsController < ApplicationController
           flash[:notice] = 'Registration was successfully created.'
           format.html {
             if (source) == 'gmclassof65.org'
+              RegistrationMailer.deliver_registration_received_message(@registration)
+              UserMailer.deliver_registration_received_message(@registration)
               redirect_to :controller=>"/gm65", :action =>"thanks" and return
             else
               redirect_to(@registration)
