@@ -1,5 +1,5 @@
 class AccountController < ApplicationController
-  model   :user
+  #model   :user
   layout  'scaffold'
 
   def login
@@ -15,35 +15,35 @@ class AccountController < ApplicationController
       end
     end
   end
-  
+
   def signup
     case @request.method
       when :post
         @user = User.new(@params['user'])
-        
-        if @user.save      
+
+        if @user.save
           @session['user'] = User.authenticate(@user.login, @params['user']['password'])
           flash['notice']  = "Signup successful"
-          redirect_back_or_default :action => "welcome"          
+          redirect_back_or_default :action => "welcome"
         end
       when :get
         @user = User.new
-    end      
-  end  
-  
+    end
+  end
+
   def delete
     if @params['id'] and @session['user']
       @user = User.find(@params['id'])
       @user.destroy
     end
     redirect_back_or_default :action => "welcome"
-  end  
-    
+  end
+
   def logout
     @session['user'] = nil
   end
-    
+
   def welcome
   end
-  
+
 end

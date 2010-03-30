@@ -1,0 +1,6 @@
+production:
+  :address: smtp.gmail.com
+  :port: 465
+  :authentication: login
+  :user_name: gmclassof65
+  :password: $p33dR@c3r
