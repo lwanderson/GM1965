@@ -1,5 +1,7 @@
 class User < ActiveRecord::Base
 
+  require 'digest/sha1'
+
   CONSONANTS = ['w', 'r', 't', 'y', 'p', 's', 'd', 'f', 'g', 'h', 'j', 'k', 'l', 'z', 'c', 'v', 'b', 'n', 'm']
   VOWELS = ['e', 'u', 'i', 'o', 'a']
   PUNCTUATION = ['~', '!', '@', '#', '$', '%', '^', '&', '*', '(', ')', '_', '-', '+', '=', ':', ';']
@@ -14,13 +16,6 @@ class User < ActiveRecord::Base
   validates_length_of :password, :maximum => 255
 
   before_save :encrypt_password
-
-  def to_xml_element(parent, name)
-    user_xml = parent.add_element(name)
-    user_xml.add_element('username').text = self.username
-    user_xml.add_element('password').text = self.password
-    user_xml
-  end
 
   def disable
     self.enabled = false
@@ -44,7 +39,7 @@ class User < ActiveRecord::Base
     new_pass = generate_random_password
     self.password = new_pass
     if send_email
-      UserMailer.deliver_password_change_message(self, new_pass)
+      UserMailer.send_later(:deliver_password_change_message, self, new_pass)
     end
     new_pass
   end
@@ -64,19 +59,39 @@ class User < ActiveRecord::Base
     self.enabled
   end
 
+  def admin?
+    self.admin
+  end
+
   def self.authenticate(username, password = nil)
     if username.is_a?(Hash)
       password = username[:password]
       username = username[:username]
     end
     user = nil
-    users = User.find(:all, :conditions => ['username = ? and password = ? and enabled = true', username, password])
+    users = User.find(:all, :conditions => ['username = ? and password = ?', username, password])
     user = users.first unless users.empty?
     user
   end
 
   def self.hash_password(username, password)
-    Digest::SHA1.hexdigest(username + ':www.scientificvoice.com:' + password)
+    Digest::SHA1.hexdigest(username + ':gmclasof65.org:' + password)
+  end
+
+  def has_any_roles?(roles)
+    has_role = false
+    role_names = [roles] unless roles.is_a?(Array)
+    if role_names.empty?
+      has_role = true
+    end
+    role_names.each do |role|
+      if role == LoginRole::ADMIN
+        has_role = admin?
+      elsif role == LoginRole::USER
+        has_role = true
+      end
+    end
+    has_role
   end
 
   private
@@ -103,7 +118,7 @@ class User < ActiveRecord::Base
 
   def encrypt_password
     if self.password.length < 40
-      write_attribute(:password, Digest::SHA1.hexdigest((self.username || '') + ':gmclasof65.org:' + self.password))
+      write_attribute(:password, User.hash_password(self.username, self.password))
     end
   end
 end

@@ -32,6 +32,10 @@ class Gm65Controller < ApplicationController
   end
 
   def signin
+    if @login.nil?
+      @login = {:username => '', :password => '', :new_password => ''}
+    end
+    @message = params[:message]
   end
 
   def memoriam
@@ -44,4 +48,3 @@ class Gm65Controller < ApplicationController
   end
 
 end
-
