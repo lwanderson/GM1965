@@ -9,8 +9,19 @@ document.writeln("    </td>");
 document.writeln("    <td align='center' class='pagetitle'>Governor Mifflin<br>Senior High School<br>Class of 1965</td>");
 document.writeln("  </tr>");
 document.writeln("  <tr>");
-document.writeln("    <td align='left'><a class='menutext' href='signin'>Sign In</a></td>");
-document.writeln("    <td align='right'><a class='menutext' href='logout'>Sign Out</a></td>");
+document.writeln("    <td align='center' colspan='2'>");
+document.writeln("      <table border='0' cellpadding='0' width='100%' cellspacing='0'>");
+document.writeln("        <tr>");
+document.writeln("          <td align='left'><a class='menutext' href='signin'>Sign In</a></td>");
+//if (welcome == "") {
+  document.writeln("          <td align='center' class='menutext'>&nbsp;</td>");
+//} else {
+//  document.writeln("          <td align='center' class='menutext'>"+welcome+"</td>");
+//}
+document.writeln("          <td align='right'><a class='menutext' href='logout'>Sign Out</a></td>");
+document.writeln("        </tr>");
+document.writeln("      </table>");
+document.writeln("    </td>");
 document.writeln("  </tr>");
 document.writeln("  <tr>");
 document.writeln("    <td align='center' colspan='2' height='8'>");
@@ -19,7 +30,7 @@ document.writeln("  <tr>");
 document.writeln("    <td align='center' colspan='2'>");
 document.writeln("      <table border='0' cellpadding='0' width='100%' cellspacing='0'>");
 document.writeln("        <tr>");
-document.writeln("          <td> <!--width='10%'-->");
+document.writeln("          <td>");
 document.writeln("            <table border='0' cellpadding='0' width='100%' cellspacing='0'>");
 document.writeln("              <tr>");
 document.writeln("                <td width='10' height='10' valign='top'><img src='images/memoTLC.gif'></td>");
@@ -46,7 +57,7 @@ document.writeln("                <td width='10' height='10' valign='top'><img s
 document.writeln("	           </tr>");
 document.writeln("            </table>");
 document.writeln("		    </td>");
-document.writeln("          <td> <!--width='12%'-->");
+document.writeln("          <td>");
 document.writeln("            <table border='0' cellpadding='0' width='100%' cellspacing='0'>");
 document.writeln("              <tr>");
 document.writeln("                <td width='10' height='10' valign='top'><img src='images/memoTLC.gif'></td>");
@@ -73,7 +84,7 @@ document.writeln("                <td width='10' height='10' valign='top'><img s
 document.writeln("	           </tr>");
 document.writeln("            </table>");
 document.writeln("		    </td>");
-document.writeln("          <td> <!-- width='21%'-->");
+document.writeln("          <td>");
 document.writeln("            <table border='0' cellpadding='0' width='100%' cellspacing='0'>");
 document.writeln("              <tr>");
 document.writeln("                <td width='10' height='10' valign='top'><img src='images/memoTLC.gif'></td>");
@@ -100,7 +111,7 @@ document.writeln("                <td width='10' height='10' valign='top'><img s
 document.writeln("	           </tr>");
 document.writeln("            </table>");
 document.writeln("		    </td>");
-document.writeln("          <td> <!-- width='12%'-->");
+document.writeln("          <td>");
 document.writeln("            <table border='0' cellpadding='0' width='100%' cellspacing='0'>");
 document.writeln("              <tr>");
 document.writeln("                <td width='10' height='10' valign='top'><img src='images/memoTLC.gif'></td>");
@@ -127,7 +138,7 @@ document.writeln("                <td width='10' height='10' valign='top'><img s
 document.writeln("	           </tr>");
 document.writeln("            </table>");
 document.writeln("		    </td>");
-document.writeln("          <td> <!-- width='19%'-->");
+document.writeln("          <td>");
 document.writeln("            <table border='0' cellpadding='0' width='100%' cellspacing='0'>");
 document.writeln("              <tr>");
 document.writeln("                <td width='10' height='10' valign='top'><img src='images/memoTLC.gif'></td>");

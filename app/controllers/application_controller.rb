@@ -56,15 +56,6 @@ class ApplicationController < ActionController::Base
       flash[:notice] = 'Please log in'
       redirect_to default_page
       return false
-    else
-      User.current_user = nil
-      @user = User.authenticate(params[:u], params[:p])
-      if @user.nil?
-        return false
-      else
-        User.current_user = @user
-        return true
-      end
     end
   end
 

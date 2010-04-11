@@ -75,7 +75,7 @@ class User < ActiveRecord::Base
   end
 
   def self.hash_password(username, password)
-    Digest::SHA1.hexdigest(username + ':gmclasof65.org:' + password)
+    Digest::SHA1.hexdigest(username + ':gmclassof65.org:' + password)
   end
 
   def has_any_roles?(roles)

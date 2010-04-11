@@ -13,16 +13,17 @@ class LoginController < ApplicationController
 
     if request.post?
       @login = params[:login]
-      user = User.authenticate(@login[:username], User.hash_password(@login[:username], @login[:password]))
+      user = User.authenticate(@login[:username], @login[:password])
       if user
         if user.enabled?
           User.current_user = user
           session[:user_id] = user.id
           session[:user_name] = 'Guest'
-          if session[:original_uri].nil? || session[:original_uri] =~ /login/
-              redirect_to default_page and return
+          welcome = "Welcome "+session[:user_name]
+          if session[:original_uri].nil? || session[:original_uri] =~ /signin/
+              redirect_to default_page, :params => {:welcome => welcome} and return
           else
-            redirect_to session[:original_uri]
+            redirect_to session[:original_uri], :params => {:welcome => welcome}
             session[:original_uri] = nil
             return
           end
@@ -31,8 +32,8 @@ class LoginController < ApplicationController
 
       session[:user_id] = nil
       session[:user_name] = nil
-      flash[:error] = 'Username and Password do not match'
-      message = 'Username and Password do not match'
+      flash[:error] = 'Username and Password do not match.'
+      message = 'Username and Password do not match.'
       redirect_to :controller => :gm65, :action => :signin, :params => { :message => message } and return
     end
   end

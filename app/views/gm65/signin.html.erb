@@ -6,6 +6,16 @@
 <meta name="keywords" content="high school class reunion Governor Mifflin 1965">
 <meta name="description" content="Governor Mifflin High School Class of 1965">
 <LINK href="stylesheets/style.css" rel="stylesheet" type="text/css">
+<script language=javascript src="javascripts/SHA1.js"></script>
+<script language=javascript>
+function hash_it() {
+   p1 = document.forms[0].username.value;
+   p2 = document.forms[0].password.value;
+   p3 = new SHA1(p1+":gmclassof65.org:"+p2).hexdigest();
+   document.forms[0].password.value = p3;
+   return true;
+}
+</script>
 </head>
 
 <body background="images/mainbg.jpg">
@@ -55,15 +65,9 @@
           <td width="10" height="100%" valign="top" background="images/memoLeft.gif"><img src="images/memoLeft.gif"></td>
           <td width="10" height="100%" valign="top" background="images/memoMiddle.gif"><img src="images/memoMiddle.gif"></td>
       	 <td valign="top" background="images/memoMiddle.gif" align="center">
-            <form action="/login" method="post">
+            <form action="/login" method="post" name="login">
               <div><input name="source" type="hidden" value="gmclassof65.org" /></div>
 				  <table border="0" cellpadding="0" cellspacing="0" columns="2">
-     		  	    <tr>
-       		      <td colspan="2" height="8"></td>
-     		  		 </tr>
-                <tr>
-                  <td colspan="2" align="center" class="mainbold">Please sign in:</td>
-                </tr>
      		  	    <tr>
        		      <td colspan="2" height="8"></td>
      		  		 </tr>
@@ -74,9 +78,15 @@
        		      <td colspan="2" height="8"></td>
      		  		 </tr>
                 <tr>
+                  <td colspan="2" align="center" class="mainbold">Please sign in:</td>
+                </tr>
+     		  	    <tr>
+       		      <td colspan="2" height="8"></td>
+     		  		 </tr>
+                <tr>
                   <td align="right" class="mainbold">Username:&nbsp;&nbsp;</td>
                   <td align="left">
-                    <input type="text" name="login[username]" id="username" size="40" value="" />
+                    <input type="text" name="login[username]" id="username" size="40" value='<%= @login[:username] %>' />
                   </td>
                 </tr>
      		  	    <tr>
@@ -102,7 +112,7 @@
      		  		 </tr>
                 <tr>
                   <td colspan="2" align="center">
-                    <input type="submit" name="signin" value="Sign In" />
+                    <input type="submit" name="signin" value="Sign In" onClick="hash_it()" />
                   </td>
                 </tr>
               </table
